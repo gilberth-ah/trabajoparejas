@@ -4,7 +4,7 @@ from tkinter import messagebox, filedialog
 
 root = Tk()
 root.geometry('480x380')
-root.config(bg= "red")
+root.config(bg= "#f52a2a")
 root.iconbitmap(bitmap='correo.ico')
 root.resizable(0,0)
 root.title('Correos')
@@ -21,11 +21,13 @@ def guardar_datos():
     nombre = nombre_entry.get()
     apellido = apellido_entry.get()
     correo = correo_entry.get()
+    
         
     file = open("correos.txt", "a")
     file.write("Nombre: {}\n".format(nombre))
     file.write("Apellido: {}\n".format(apellido))
     file.write("Correo electrónico: {}\n".format(correo))
+    
     if checkbox_var.get():
         file.write("Acepta recibir correos electrónicos\n")
     else:
