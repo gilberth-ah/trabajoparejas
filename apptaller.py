@@ -4,7 +4,7 @@ from tkinter import messagebox, filedialog
 
 root = Tk()
 root.geometry('480x380')
-root.config(bg= "black")
+root.config(bg= "red")
 root.iconbitmap(bitmap='correo.ico')
 root.resizable(0,0)
 root.title('Correos')
@@ -63,8 +63,17 @@ correo_label.grid(row=2, column=0, padx=5, pady=5)
 correo_entry = Entry(campos_marco)
 correo_entry.grid(row=2, column=1, padx=5, pady=5)
 
+
+edad_label = Label(campos_marco, text="Edad")
+edad_label.grid(row=3, column=0, padx=5, pady=5)
+edad_spinbox = Spinbox(campos_marco, from_=0, to=120)
+edad_spinbox.grid(row=3, column=1, padx=5, pady=5)
+
+
+
 checkbox = Checkbutton(campos_marco, text="Acepto recibir correos electrónicos", variable=checkbox_var)
-checkbox.grid(row=3, columnspan=2, padx=5, pady=5)
+checkbox.grid(row=4, columnspan=2, padx=5, pady=5)
+
 
 
 guardar_boton = Button(root, text="Guardar", command=guardar_datos)
