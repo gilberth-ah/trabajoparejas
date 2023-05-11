@@ -46,27 +46,27 @@ menu_bar.add_cascade(label="Archivo", menu=archivo_menu)
 archivo_menu.add_command(label="Guardar", command=guardar_datos)
 
 
-campos_marco = LabelFrame(root, text="Datos Personales")
+campos_marco = LabelFrame(root, text="Datos Personales",font=("Bauhaus 93",14))
 campos_marco.pack(padx=10, pady=10)
 
 
-nombre_label = Label(campos_marco, text="Nombre")
+nombre_label = Label(campos_marco, text="Nombre",font=("Bauhaus 93",10))
 nombre_label.grid(row=0, column=0, padx=5, pady=5)
 nombre_entry = Entry(campos_marco)
 nombre_entry.grid(row=0, column=1, padx=5, pady=5)
 
-apellido_label = Label(campos_marco, text="Apellido")
+apellido_label = Label(campos_marco, text="Apellido",font=("Bauhaus 93",10))
 apellido_label.grid(row=1, column=0, padx=5, pady=5)
 apellido_entry = Entry(campos_marco)
 apellido_entry.grid(row=1, column=1, padx=5, pady=5)
 
-correo_label = Label(campos_marco, text="Correo electrónico")
+correo_label = Label(campos_marco, text="Correo electrónico",font=("Bauhaus 93",10))
 correo_label.grid(row=2, column=0, padx=5, pady=5)
 correo_entry = Entry(campos_marco)
 correo_entry.grid(row=2, column=1, padx=5, pady=5)
 
 
-edad_label = Label(campos_marco, text="Edad")
+edad_label = Label(campos_marco, text="Edad",font=("Bauhaus 93",10))
 edad_label.grid(row=3, column=0, padx=5, pady=5)
 edad_spinbox = Spinbox(campos_marco, from_=0, to=120)
 edad_spinbox.grid(row=3, column=1, padx=5, pady=5)
