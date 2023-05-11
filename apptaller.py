@@ -3,7 +3,11 @@ from tkinter import messagebox, filedialog
 
 
 root = Tk()
-root.title("Mi Aplicación")
+root.geometry('480x380')
+root.config(bg= "black")
+root.iconbitmap(bitmap='correo.ico')
+root.resizable(0,0)
+root.title('Correos')
 
 
 checkbox_var = BooleanVar()
@@ -12,23 +16,23 @@ checkbox_var.set(True)
 
 def guardar_datos():
     
-    filename = filedialog.asksaveasfilename(defaultextension=".txt")
-    if filename:
+   
        
-        nombre = nombre_entry.get()
-        apellido = apellido_entry.get()
-        correo = correo_entry.get()
+    nombre = nombre_entry.get()
+    apellido = apellido_entry.get()
+    correo = correo_entry.get()
         
-        with open(filename, "w") as f:
-            f.write("Nombre: {}\n".format(nombre))
-            f.write("Apellido: {}\n".format(apellido))
-            f.write("Correo electrónico: {}\n".format(correo))
-            if checkbox_var.get():
-                f.write("Acepta recibir correos electrónicos\n")
-            else:
-                f.write("No acepta recibir correos electrónicos\n")
-        
-        messagebox.showinfo("Datos guardados", "Los datos se han guardado correctamente.")
+    file = open("correos.txt", "a")
+    file.write("Nombre: {}\n".format(nombre))
+    file.write("Apellido: {}\n".format(apellido))
+    file.write("Correo electrónico: {}\n".format(correo))
+    if checkbox_var.get():
+        file.write("Acepta recibir correos electrónicos\n")
+    else:
+        file.write("No acepta recibir correos electrónicos\n")
+    file.close()
+       
+    messagebox.showinfo("Datos guardados", "Los datos se han guardado correctamente.")
 
 
 menu_bar = Menu(root)
@@ -59,13 +63,13 @@ correo_label.grid(row=2, column=0, padx=5, pady=5)
 correo_entry = Entry(campos_marco)
 correo_entry.grid(row=2, column=1, padx=5, pady=5)
 
-
 checkbox = Checkbutton(campos_marco, text="Acepto recibir correos electrónicos", variable=checkbox_var)
 checkbox.grid(row=3, columnspan=2, padx=5, pady=5)
 
 
 guardar_boton = Button(root, text="Guardar", command=guardar_datos)
 guardar_boton.pack(padx=10, pady=10)
+
 
 
 
